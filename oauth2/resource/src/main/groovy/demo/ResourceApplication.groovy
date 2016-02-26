@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
 @RestController
-@EnableResourceServer
 class ResourceApplication {
-	
+
 	@RequestMapping('/')
 	def home() {
 		[id: UUID.randomUUID().toString(), content: 'Hello World']
