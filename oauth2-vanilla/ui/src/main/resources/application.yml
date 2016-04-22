@@ -9,12 +9,13 @@ security:
     password: password
   oauth2:
     client:
-      accessTokenUri: http://localhost:9999/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
+      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+      clientId: 1041144924884-pl71kgmha80janlnkdvr8ocnb9ptoibd.apps.googleusercontent.com
+      clientSecret: arNBTNWpbQ6OU6xmvNTPJhF8
+      scope: "profile email"
     resource:
-      userInfoUri: http://localhost:9999/uaa/user
+      userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
 
 zuul:
   routes:
@@ -23,7 +24,7 @@ zuul:
       url: http://localhost:9000
     user:
       path: /user/**
-      url: http://localhost:9999/uaa/user
+      url: https://www.googleapis.com/oauth2/v2/userinfo
 
 logging:
   level:
